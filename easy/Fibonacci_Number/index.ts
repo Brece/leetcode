@@ -1,12 +1,12 @@
 // normal loop approach
-function fibLoop(n: number): number {
+function fibLoop(n: number): number | undefined {
     if(n <= 1) { return n }
 
     let list = [0, 1];
     for(let i = 1; i < n; i++) {
-        list.push(list[list.length - 1] + list[list.length - 2])
+        list.push(list[i] + list[i - 1]);
     }
-    return list[list.length - 1];
+    return list.pop();
 }
 
 // recursion approach
